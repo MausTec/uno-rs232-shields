@@ -30,10 +30,6 @@ Text Label 8150 3000 0    60   ~ 0
 A4(SDA)
 Text Label 8150 3100 0    60   ~ 0
 A5(SCL)
-Text Label 9800 2800 0    60   ~ 0
-3(**)
-Text Label 9800 2700 0    60   ~ 0
-4
 Text Label 9800 2600 0    60   ~ 0
 5(**)
 Text Label 9800 2500 0    60   ~ 0
@@ -607,9 +603,9 @@ Wire Wire Line
 	1350 1700 1350 1550
 Connection ~ 1350 1700
 Text GLabel 1200 2700 0    50   Input ~ 0
-TX
+UTX
 Text GLabel 1200 2800 0    50   Input ~ 0
-RX
+URX
 Text GLabel 1200 2900 0    50   Input ~ 0
 D9
 Text GLabel 1200 3000 0    50   Input ~ 0
@@ -907,4 +903,186 @@ Wire Notes Line
 	2200 5000 2200 5100
 Text Notes 3250 5800 0    59   ~ 0
 1) If you are programming this board from the Arduino IDE, connect\nRTS to RST by jumping pins 1 and 2. CTS/DSR are not used.\n\n2) Some DCE devices use DSR as a busy signal (Citizen Printer, etc.)\nIn this case, J3 can be set to route DSR to an Arduino pin. The default\nrouting is DSR->D2 for INT0 use and flow control.\n\n3) If control signals are not required, it is best to remove jumpers\nfrom J1 to free up those data pins for other use and prevent RST\nfrom propagating to your equipment.
+Text GLabel 8800 4050 2    50   Input ~ 0
+RX
+Text GLabel 8800 4150 2    50   Input ~ 0
+D2
+Text GLabel 8800 4250 2    50   Input ~ 0
+D3
+Text GLabel 8800 4350 2    50   Input ~ 0
+D4
+Text GLabel 8300 4050 0    59   Input ~ 0
+URX
+Connection ~ 8300 4150
+Wire Wire Line
+	8300 4150 8300 4050
+Connection ~ 8300 4250
+Wire Wire Line
+	8300 4150 8300 4250
+Wire Wire Line
+	8300 4350 8300 4250
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J2
+U 1 1 603B3853
+P 8500 4250
+F 0 "J2" H 8450 4750 50  0000 C CNN
+F 1 "RX Route" H 8550 4650 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical" H 8500 4250 50  0001 C CNN
+F 3 "~" H 8500 4250 50  0001 C CNN
+	1    8500 4250
+	1    0    0    -1  
+$EndComp
+Text GLabel 8800 4450 2    50   Input ~ 0
+TX
+$Comp
+L Connector_Generic:Conn_01x05 J5
+U 1 1 603DA995
+P 9250 4250
+F 0 "J5" H 9168 4667 50  0000 C CNN
+F 1 "TX Route" H 9168 4576 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 9250 4250 50  0001 C CNN
+F 3 "~" H 9250 4250 50  0001 C CNN
+	1    9250 4250
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9450 4150 9450 4250
+Wire Wire Line
+	9450 4250 9450 4350
+Connection ~ 9450 4250
+Wire Wire Line
+	9450 4350 9450 4450
+Connection ~ 9450 4350
+Text GLabel 9450 4450 2    59   Input ~ 0
+UTX
+NoConn ~ 9450 4050
+NoConn ~ 8300 4450
+Wire Notes Line
+	8300 4850 8600 4850
+Wire Notes Line
+	8600 4850 8600 5350
+Wire Notes Line
+	8600 5350 8300 5350
+Wire Notes Line
+	8300 5350 8300 4850
+Wire Notes Line
+	8300 4950 8600 4950
+Wire Notes Line
+	8300 5050 8600 5050
+Wire Notes Line
+	8300 5150 8600 5150
+Wire Notes Line
+	8300 5250 8600 5250
+Wire Notes Line
+	8400 4850 8400 5350
+Wire Notes Line
+	8500 4850 8500 5350
+Text Notes 8300 4850 0    31   ~ 0
+1          3
+Wire Notes Line
+	8300 5600 8600 5600
+Wire Notes Line
+	8600 5600 8600 6100
+Wire Notes Line
+	8600 6100 8300 6100
+Wire Notes Line
+	8300 6100 8300 5600
+Wire Notes Line
+	8300 5700 8600 5700
+Wire Notes Line
+	8300 5800 8600 5800
+Wire Notes Line
+	8300 5900 8600 5900
+Wire Notes Line
+	8300 6000 8600 6000
+Wire Notes Line
+	8400 5600 8400 6100
+Wire Notes Line
+	8500 5600 8500 6100
+Text Notes 8300 5600 0    31   ~ 0
+1          3
+Wire Notes Line
+	9800 4850 10100 4850
+Wire Notes Line
+	10100 4850 10100 5350
+Wire Notes Line
+	10100 5350 9800 5350
+Wire Notes Line
+	9800 5350 9800 4850
+Wire Notes Line
+	9800 4950 10100 4950
+Wire Notes Line
+	9800 5050 10100 5050
+Wire Notes Line
+	9800 5150 10100 5150
+Wire Notes Line
+	9800 5250 10100 5250
+Wire Notes Line
+	9900 4850 9900 5350
+Wire Notes Line
+	10000 4850 10000 5350
+Text Notes 9800 4850 0    31   ~ 0
+1          3
+Wire Notes Line
+	9800 5600 10100 5600
+Wire Notes Line
+	10100 5600 10100 6100
+Wire Notes Line
+	10100 6100 9800 6100
+Wire Notes Line
+	9800 6100 9800 5600
+Wire Notes Line
+	9800 5700 10100 5700
+Wire Notes Line
+	9800 5800 10100 5800
+Wire Notes Line
+	9800 5900 10100 5900
+Wire Notes Line
+	9800 6000 10100 6000
+Wire Notes Line
+	9900 5600 9900 6100
+Wire Notes Line
+	10000 5600 10000 6100
+Text Notes 9800 5600 0    31   ~ 0
+1          3
+Wire Notes Line width 100
+	8350 4900 8450 4900
+Wire Notes Line width 100
+	8450 5300 8550 5300
+Wire Notes Line width 100
+	9850 5000 9950 5000
+Wire Notes Line width 100
+	9950 5100 10050 5100
+Wire Notes Line width 100
+	9850 5750 9950 5750
+Wire Notes Line width 100
+	9950 5950 10050 5950
+Wire Notes Line width 100
+	8350 5850 8450 5850
+Wire Notes Line width 100
+	8450 5950 8550 5950
+Text Notes 7250 5150 0    59   ~ 0
+Default Serial:\nRX -> RX,\nTX -> TX
+Text Notes 8750 5150 0    59   ~ 0
+Software Serial:\nRX -> D2,\nTX -> D3
+Text Notes 8750 6000 0    59   ~ 0
+Software Serial, with\nD3 open for PWM:\nRX -> D2\nTX -> D4
+Text Notes 7250 6000 0    59   ~ 0
+Software Serial, with\nD2 open for INT0:\nRX -> D3\nTX -> D4
+Wire Notes Line
+	8700 6200 8700 4750
+Wire Notes Line
+	7200 4750 7200 6200
+Wire Notes Line
+	7200 6200 10200 6200
+Wire Notes Line
+	7200 4750 10200 4750
+Wire Notes Line
+	7200 5450 10200 5450
+Wire Notes Line
+	10200 4750 10200 6200
+Text GLabel 9800 2800 2    50   Input ~ 0
+D3
+Text GLabel 9800 2700 2    50   Input ~ 0
+D4
 $EndSCHEMATC
